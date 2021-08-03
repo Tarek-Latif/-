@@ -1,0 +1,9 @@
+http://localhost/PDF_BOOKS/index.php
+
+login
+http://localhost/PDF_BOOKS/dashboard/index.php
+Admin :tarek
+Pass:123
+
+dashboard
+http://localhost/PDF_BOOKS/dashboard/dashboard.php
