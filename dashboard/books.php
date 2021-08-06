@@ -11,20 +11,24 @@ if (!isset($_SESSION['adminInfo'])) {
     <!-- Page Content -->
     
   <!-- Start Delete Book -->
-  <?php
-    # الاتصال مع قاعدة البيانات
+    <?php
+
+# الاتصال مع قاعدة البيانات
     $host = 'localhost';
     $user = 'root';
     $pass = '';
     $db = 'pdfbooks';
     $con = mysqli_connect ($host,$user,$pass,$db);
 
+
   if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $query = "DELETE FROM books WHERE id = '$id'";
     $delete = mysqli_query($con, $query);
+    echo "تم حذف الكتاب بنجاح";
   }
   ?>
+
   <!-- End Delete book -->
 
     <div class="container-fluid">
@@ -66,6 +70,7 @@ if (!isset($_SESSION['adminInfo'])) {
                             <td>
                                 <a href="edit-book.php?id=<?php echo $row['id']; ?>" class="custom-btn">تعديل</a>
                                 <a href="books.php?id=<?php echo $row['id']; ?>" class="custom-btn confirm">حذف</a>
+
                             </td>
                         </tr>
                     <?php

@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'include/connection.php';
-include 'include/header.html';
+include 'header.php';
 if (!isset($_SESSION['adminInfo'])) {
     header('Location:index.php');
 } else {
@@ -51,13 +51,13 @@ if (!isset($_SESSION['adminInfo'])) {
             $book = rand(0, 1000) . "_" . $bookName;
             move_uploaded_file($bookTmp, "../uploads/books/" . $book);
             $query          = "UPDATE books SET 
-            $bookTitle      = '$bookTitle',
-            $bookAuthor  = '$bookAuthor',
-            $bookCat        = '$bookCat',
-            $bookCover    = $bookCover',
-            $book             = '$book',
-            $bookContent = '$bookContent'
-            WHERE id      ='$id'
+            $bookTitle      = 'bookTitle',
+            $bookAuthor  = 'bookAuthor',
+            $bookCat        = 'bookCat',
+            $bookCover    = bookCover',
+            $book             = 'book',
+            $bookContent = 'bookContent'
+            WHERE id      ='id'
             ";
             $res = mysqli_query($con, $query);
             if (isset($res)) {
@@ -129,11 +129,10 @@ if (!isset($_SESSION['adminInfo'])) {
 
     </div>
     <!-- /#wrapper -->
-    <?php
-    include 'include/footer.html';
-    ?>
 
 
 <?php
 }
 ?>
+
+
